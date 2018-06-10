@@ -1,12 +1,16 @@
-var callback = function(details) {
-    if (details.url.includes("youtube")) {
-        var bkg = chrome.extension.getBackgroundPage();
-        bkg.console.log('foo');
+function notification_trigger(urls, details) {
+    const bkg = chrome.extension.getBackgroundPage();
+
+    const res = urls.filter(url => details.url.includes(url));
+    if (res.length > 0) {
+        alert("HOW DARE YOU!")
     }
 };
     
-var filter = {urls: ["<all_urls>"]};
+const filter = {urls: ["<all_urls>"]};
 
-var opt_extraInfoSpec = [];
+const opt_extraInfoSpec = [];
 
-chrome.webRequest.onCompleted.addListener(callback, filter, opt_extraInfoSpec);
+const urls = ["youtube.com/"]
+
+chrome.webNavigation.onCompleted.addListener(details => notification_trigger(urls, details));

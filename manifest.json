@@ -5,7 +5,11 @@
   "description": "Plugin that reminds you to do useful stuff, instead of watching YouTube videos",
 
   "background": {
-    "persistent": false,
+    "persistent": true,
     "scripts": ["page_url_trigger.js"]
-  }
+  },
+
+  "permissions": [
+    "webNavigation"
+  ]
 }
