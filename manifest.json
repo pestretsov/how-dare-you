@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "How Dare You",
+  "version": "0.1",
+  "description": "Plugin that reminds you to do useful stuff, instead of watching YouTube videos",
+
+  "background": {
+    "persistent": false,
+    "scripts": ["page_url_trigger.js"]
+  }
+}
