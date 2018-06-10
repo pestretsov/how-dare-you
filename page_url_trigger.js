@@ -6,11 +6,7 @@ function notification_trigger(urls, details) {
         alert("HOW DARE YOU!")
     }
 };
-    
-const filter = {urls: ["<all_urls>"]};
 
-const opt_extraInfoSpec = [];
-
-const urls = ["youtube.com/"]
+const urls = ["youtube.com/"] // shouldn't be hardcoded -- mb get it from user's settings?
 
 chrome.webNavigation.onCompleted.addListener(details => notification_trigger(urls, details));
