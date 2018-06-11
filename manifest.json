@@ -6,7 +6,10 @@
 
   "background": {
     "persistent": true,
-    "scripts": ["page_url_trigger.js"]
+    "scripts": [
+        "utils/url_utils.js",
+        "page_url_trigger.js"
+    ]
   },
 
   "permissions": [
