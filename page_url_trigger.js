@@ -1,12 +1,12 @@
-function notification_trigger(urls, details) {
-    const bkg = chrome.extension.getBackgroundPage();
+function notification_trigger(blacklist_urls, details) {
+    const url = details.url;
+    const domain = get_domain_from_url(url);
 
-    const res = urls.filter(url => details.url.includes(url));
-    if (res.length > 0) {
+    if (blacklist_urls.includes(domain)) {
         alert("HOW DARE YOU!");
     }
 };
 
-const urls = ["youtube.com/"]; // shouldn't be hardcoded -- mb get it from user's settings?
+const blacklist_urls = ["youtube.com", "kinovod.net"]; // shouldn't be hardcoded -- mb get it from user's settings?
 
-chrome.webNavigation.onCompleted.addListener(details => notification_trigger(urls, details));
+chrome.webNavigation.onCompleted.addListener(details => notification_trigger(blacklist_urls, details));
