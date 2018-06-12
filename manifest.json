@@ -7,6 +7,7 @@
   "background": {
     "persistent": true,
     "scripts": [
+        "utils/logging_utils.js",
         "utils/url_utils.js",
         "page_url_trigger.js"
     ]
