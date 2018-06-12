@@ -1,7 +1,7 @@
 function notification_trigger(blacklist_urls, details) {
-    const url = details.url;
-    const domain = get_domain_from_url(url);
-
+    const parsed_url = parse_url(details.url);
+    const domain = parsed_url.domain;
+    
     if (blacklist_urls.includes(domain)) {
         alert("HOW DARE YOU!");
     }
